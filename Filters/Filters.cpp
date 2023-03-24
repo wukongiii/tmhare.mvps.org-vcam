@@ -44,7 +44,7 @@ CVCamStream::CVCamStream(HRESULT *phr, CVCam *pParent, LPCWSTR pPinName) :
     CSourceStream(NAME("Virtual Cam"),phr, pParent, pPinName), m_pParent(pParent)
 {
     // Set the default media type as 320x240x24@15
-    GetMediaType(4, &m_mt);
+    GetMediaType(16, &m_mt);
 }
 
 CVCamStream::~CVCamStream()
@@ -115,7 +115,7 @@ HRESULT CVCamStream::SetMediaType(const CMediaType *pmt)
 HRESULT CVCamStream::GetMediaType(int iPosition, CMediaType *pmt)
 {
     if(iPosition < 0) return E_INVALIDARG;
-    if(iPosition > 8) return VFW_S_NO_MORE_ITEMS;
+    if(iPosition > 24) return VFW_S_NO_MORE_ITEMS;
 
     if(iPosition == 0) 
     {

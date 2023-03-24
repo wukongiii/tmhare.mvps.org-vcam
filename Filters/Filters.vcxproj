@@ -167,6 +167,7 @@
       <StackReserveSize>2097152</StackReserveSize>
       <StackCommitSize>2097152</StackCommitSize>
       <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>$(DirectShowSamplesDir)baseclasses\bin\$(Platform)\$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
